@@ -1,4 +1,7 @@
 <%@ page import="java.util.Objects" %>
+<%@ page import="chart.musicchart.HelloServlet" %>
+<%@ page import="java.sql.Timestamp" %>
+<%@ page import="java.time.Instant" %>
 <html>
 <head>
     <title>Echoing HTML Request Parameters</title>
@@ -20,7 +23,10 @@
     if (login != null || password != null) {
         assert login != null;
         if (Objects.equals(login, "login") && Objects.equals(password, "password"))
+        {
+            HelloServlet.setLast_authorization(Timestamp.from(Instant.now()));
             request.getRequestDispatcher("/addsong").forward(request, response);
+        }
         else {
 %>
 <h3>Authorization failed!</h3>
