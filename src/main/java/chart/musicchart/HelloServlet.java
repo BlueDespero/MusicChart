@@ -1,6 +1,7 @@
 package chart.musicchart;
 
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import java.time.Instant;
 @WebServlet(name = "hello", value = "/hello")
 public class HelloServlet extends HttpServlet {
     private static Timestamp last_authorization;
+
     static {
         last_authorization = new Timestamp(0);
     }
@@ -21,19 +23,10 @@ public class HelloServlet extends HttpServlet {
         HelloServlet.last_authorization = last_authorization;
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        if ( (Timestamp.from(Instant.now()).getTime() - last_authorization.getTime())/(60 * 1000) >= 5)
-            this.do_authorization();
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if ((Timestamp.from(Instant.now()).getTime() - last_authorization.getTime()) / (60 * 1000) >= 5)
+            request.getRequestDispatcher("/authorization").forward(request, response);
         else
-            this.do_voting();
-    }
-
-    private void do_voting() {
-    }
-
-    private void do_authorization() {
-    }
-
-    public void destroy() {
+            request.getRequestDispatcher("/voting").forward(request, response);
     }
 }
