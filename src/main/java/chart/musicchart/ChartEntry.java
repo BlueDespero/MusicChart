@@ -1,7 +1,7 @@
 package chart.musicchart;
 
-public class ChartEntry {
-    public float rating;
+public class ChartEntry implements Comparable<ChartEntry> {
+    public Float rating;
     public String url;
     public int no_votes;
     public String name;
@@ -10,11 +10,17 @@ public class ChartEntry {
         this.name = name;
         this.url = url;
         this.no_votes = 0;
-        this.rating = 0;
+        this.rating = (float) 0;
     }
 
     public void vote_on_this(int rating) {
         this.rating = (this.rating * this.no_votes + rating) / (this.no_votes + 1);
         this.no_votes += 1;
+    }
+
+    @Override
+    public int compareTo(ChartEntry o) {
+
+        return this.rating.compareTo(o.rating);
     }
 }

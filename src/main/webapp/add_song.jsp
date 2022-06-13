@@ -6,6 +6,10 @@
     <title>Echoing HTML Request Parameters</title>
 </head>
 <body>
+
+<%@include file="/WEB-INF/jspf/chart.jspf" %>
+
+
 <form method="get" action="/MusicChart/addsong">
     <label> Song name:
         <input type="text" name="song_name">

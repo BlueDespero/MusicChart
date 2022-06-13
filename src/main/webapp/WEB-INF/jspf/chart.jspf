@@ -1,0 +1,43 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="chart.musicchart.ChartEntry" %>
+<%@ page import="chart.musicchart.MusicChart" %>
+<%@ page import="java.util.Collections" %>
+<div>
+    <%
+        ArrayList<ChartEntry> current_chart = new ArrayList<>(MusicChart.rating_list);
+        Collections.sort(current_chart);
+        if (current_chart.size() != 0) {
+    %>
+    <table>
+        <tr>
+            <th>Song name</th>
+            <th>Number of votes</th>
+            <th>Average rating</th>
+            <th>URL</th>
+        </tr>
+
+        <%
+            for (ChartEntry entry :
+                    current_chart) {
+        %>
+
+        <tr>
+            <td><%=entry.name%>
+            </td>
+            <td><%=entry.no_votes%>
+            </td>
+            <td><%=entry.rating%>
+            </td>
+            <td><%=entry.url%>
+            </td>
+        </tr>
+
+        <%
+            }
+        %>
+    </table>
+    <hr>
+    <%
+        }
+    %>
+</div>

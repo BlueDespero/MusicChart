@@ -5,6 +5,9 @@
     <link href="${pageContext.request.contextPath}/style/star_rating.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+<%@include file="/WEB-INF/jspf/chart.jspf" %>
+
 <h1>Current vote:</h1>
 <h2><%=MusicChart.get_latest_entry().name%></h2>
 <iframe width="420" height="315"
@@ -12,34 +15,34 @@
 </iframe>
 <br>
 
-<form>
+<form method="get" action="">
     <fieldset class="rating">
         <legend>rating</legend>
 
-        <input id="demo-1" type="radio" name="demo" value="1">
+        <input id="demo-1" type="radio" name="song_rating" value="-5">
         <label for="demo-1">1 star</label>
-        <input id="demo-2" type="radio" name="demo" value="2">
+        <input id="demo-2" type="radio" name="song_rating" value="-4">
         <label for="demo-2">2 stars</label>
-        <input id="demo-3" type="radio" name="demo" value="3">
+        <input id="demo-3" type="radio" name="song_rating" value="-3">
         <label for="demo-3">3 stars</label>
-        <input id="demo-4" type="radio" name="demo" value="4">
+        <input id="demo-4" type="radio" name="song_rating" value="-2">
         <label for="demo-4">4 stars</label>
-        <input id="demo-5" type="radio" name="demo" value="5">
+        <input id="demo-5" type="radio" name="song_rating" value="-1">
         <label for="demo-5">5 stars</label>
 
 
-        <input id="demo-6" type="radio" name="demo" value="1">
+        <input id="demo-6" type="radio" name="song_rating" value="0">
         <label for="demo-6">1 star</label>
 
-        <input id="demo-7" type="radio" name="demo" value="2">
+        <input id="demo-7" type="radio" name="song_rating" value="2">
         <label for="demo-7">2 stars</label>
-        <input id="demo-8" type="radio" name="demo" value="3">
+        <input id="demo-8" type="radio" name="song_rating" value="3">
         <label for="demo-8">3 stars</label>
-        <input id="demo-9" type="radio" name="demo" value="4">
+        <input id="demo-9" type="radio" name="song_rating" value="4">
         <label for="demo-9">4 stars</label>
-        <input id="demo-10" type="radio" name="demo" value="5">
+        <input id="demo-10" type="radio" name="song_rating" value="5">
         <label for="demo-10">5 stars</label>
-        <input id="demo-11" type="radio" name="demo" value="5">
+        <input id="demo-11" type="radio" name="song_rating" value="5">
         <label for="demo-11">5 stars</label>
 
 
@@ -51,7 +54,7 @@
             <label for="demo-4" aria-label="-4 stars" title="4 stars"></label>
             <label for="demo-5" aria-label="-5 stars" title="5 stars"></label>
 
-            <label for="demo-6" aria-label="0 stars" title="1 star"></label>
+            <label for="demo-6" aria-label="0 stars" title="0 stars"></label>
 
             <label for="demo-7" aria-label="1 star" title="1 star"></label>
             <label for="demo-8" aria-label="2 stars" title="2 stars"></label>
@@ -60,6 +63,7 @@
             <label for="demo-11" aria-label="5 stars" title="5 stars"></label>
         </div>
 
+        <input type="submit" value="Rate song!">
     </fieldset>
 </form>
 </body>
