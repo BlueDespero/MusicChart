@@ -11,6 +11,7 @@
     <table>
         <tr>
             <th>Song name</th>
+            <th>Song author</th>
             <th>Number of votes</th>
             <th>Average rating</th>
             <th>URL</th>
@@ -24,11 +25,13 @@
         <tr>
             <td><%=entry.name%>
             </td>
+            <td><%=entry.author%>
+            </td>
             <td><%=entry.no_votes%>
             </td>
             <td><%=entry.rating%>
             </td>
-            <td><%=entry.url%>
+            <td><a href=<%=entry.url%>>Link!</a>
             </td>
         </tr>
 

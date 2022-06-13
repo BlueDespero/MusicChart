@@ -1,9 +1,10 @@
 <%@ page import="chart.musicchart.HelloServlet" %>
-<p id="demo"></p>
+
+<h1>Remaining time: <p id="demo"></p></h1>
 
 <script>
     // Set the date we're counting down to
-    var countDownDate = new Date(<%=HelloServlet.getLast_authorization()%> + (5 * 60 * 1000)).getTime();
+    var countDownDate = new Date(<%=HelloServlet.getLast_authorization()%> + (1 * 60 * 1000)).getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function () {
@@ -25,6 +26,7 @@
         if (distance < 0) {
             clearInterval(x);
             document.getElementById("demo").innerHTML = "EXPIRED";
+            window.location.pathname = '/MusicChart/hello'
         }
     }, 1000);
 </script>

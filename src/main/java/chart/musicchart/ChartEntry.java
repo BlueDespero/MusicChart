@@ -1,15 +1,17 @@
 package chart.musicchart;
 
 public class ChartEntry implements Comparable<ChartEntry> {
+    public String author;
     public Float rating;
     public String url;
     public int no_votes;
     public String name;
 
-    public ChartEntry(String name, String url) {
+    public ChartEntry(String name, String author, String url) {
         this.name = name;
         this.url = url;
         this.no_votes = 0;
+        this.author = author;
         this.rating = (float) 0;
     }
 
