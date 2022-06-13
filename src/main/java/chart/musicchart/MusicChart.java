@@ -10,7 +10,7 @@ public class MusicChart {
     }
 
     public static void vote_on_current(int rating){
-        rating_list.get(rating_list.size()-1).vote_on_this(rating);
+        get_latest_entry().vote_on_this(rating);
     }
 
     public static ChartEntry get_latest_entry()

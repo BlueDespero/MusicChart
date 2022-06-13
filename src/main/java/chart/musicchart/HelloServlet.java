@@ -23,6 +23,10 @@ public class HelloServlet extends HttpServlet {
         HelloServlet.last_authorization = last_authorization;
     }
 
+    public static long getLast_authorization() {
+        return last_authorization.getTime();
+    }
+
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if ((Timestamp.from(Instant.now()).getTime() - last_authorization.getTime()) / (60 * 1000) >= 5)
             request.getRequestDispatcher("/authorization").forward(request, response);

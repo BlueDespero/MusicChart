@@ -9,13 +9,21 @@
 <%@include file="/WEB-INF/jspf/chart.jspf" %>
 
 <h1>Current vote:</h1>
-<h2><%=MusicChart.get_latest_entry().name%></h2>
+<h2><%=MusicChart.get_latest_entry().name%>
+</h2>
+
+<%@include file="/WEB-INF/jspf/countdown.jspf" %>
+
 <iframe width="420" height="315"
         src=<%=MusicChart.get_latest_entry().url%>>
 </iframe>
 <br>
 
-<form method="get" action="">
+<%
+    if (session.getAttribute("rated_song_name") != MusicChart.get_latest_entry().name) {
+%>
+
+<form method="get" action="/MusicChart/acceptvote">
     <fieldset class="rating">
         <legend>rating</legend>
 
@@ -46,7 +54,6 @@
         <label for="demo-11">5 stars</label>
 
 
-
         <div class="stars">
             <label for="demo-1" aria-label="-1 star" title="1 star"></label>
             <label for="demo-2" aria-label="-2 stars" title="2 stars"></label>
@@ -66,5 +73,15 @@
         <input type="submit" value="Rate song!">
     </fieldset>
 </form>
+<%
+} else {
+%>
+<div>
+    Thank you for voting!
+    Your score is <%=session.getAttribute("rating_given")%> start!
+</div>
+<%
+    }
+%>
 </body>
 </html>
