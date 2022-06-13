@@ -33,8 +33,41 @@ label[for]:hover {
 .rating [type="radio"]:nth-of-type(2):checked ~ .stars label:nth-of-type(-n+2),
 .rating [type="radio"]:nth-of-type(3):checked ~ .stars label:nth-of-type(-n+3),
 .rating [type="radio"]:nth-of-type(4):checked ~ .stars label:nth-of-type(-n+4),
-.rating [type="radio"]:nth-of-type(5):checked ~ .stars label:nth-of-type(-n+5) {
+.rating [type="radio"]:nth-of-type(5):checked ~ .stars label:nth-of-type(-n+5)
+{
+    color: black;
+}
+
+.rating [type="radio"]:nth-of-type(7):checked ~ .stars label:nth-of-type(-n+7),
+.rating [type="radio"]:nth-of-type(8):checked ~ .stars label:nth-of-type(-n+8),
+.rating [type="radio"]:nth-of-type(9):checked ~ .stars label:nth-of-type(-n+9),
+.rating [type="radio"]:nth-of-type(10):checked ~ .stars label:nth-of-type(-n+10),
+.rating [type="radio"]:nth-of-type(11):checked ~ .stars label:nth-of-type(-n+11)
+{
     color: orange;
+}
+
+.rating [type="radio"]:nth-of-type(6):checked ~ .stars label:nth-of-type(-n+5)
+{
+    color: black;
+}
+
+.rating [type="radio"]:nth-of-type(7):checked ~ .stars label:nth-of-type(-n+6),
+.rating [type="radio"]:nth-of-type(8):checked ~ .stars label:nth-of-type(-n+6),
+.rating [type="radio"]:nth-of-type(9):checked ~ .stars label:nth-of-type(-n+6),
+.rating [type="radio"]:nth-of-type(10):checked ~ .stars label:nth-of-type(-n+6),
+.rating [type="radio"]:nth-of-type(11):checked ~ .stars label:nth-of-type(-n+6)
+{
+    color: silver;
+}
+
+.rating [type="radio"]:nth-of-type(7):checked ~ .stars label:nth-of-type(-n+5),
+.rating [type="radio"]:nth-of-type(8):checked ~ .stars label:nth-of-type(-n+5),
+.rating [type="radio"]:nth-of-type(9):checked ~ .stars label:nth-of-type(-n+5),
+.rating [type="radio"]:nth-of-type(10):checked ~ .stars label:nth-of-type(-n+5),
+.rating [type="radio"]:nth-of-type(11):checked ~ .stars label:nth-of-type(-n+5)
+{
+    color: black;
 }
 
 .rating [type="radio"]:nth-of-type(1):focus ~ .stars label:nth-of-type(1),
@@ -42,5 +75,17 @@ label[for]:hover {
 .rating [type="radio"]:nth-of-type(3):focus ~ .stars label:nth-of-type(3),
 .rating [type="radio"]:nth-of-type(4):focus ~ .stars label:nth-of-type(4),
 .rating [type="radio"]:nth-of-type(5):focus ~ .stars label:nth-of-type(5) {
+    color: gray;
+}
+
+.rating [type="radio"]:nth-of-type(6):focus ~ .stars label:nth-of-type(5) {
+    color: silver;
+}
+
+.rating [type="radio"]:nth-of-type(7):focus ~ .stars label:nth-of-type(7),
+.rating [type="radio"]:nth-of-type(8):focus ~ .stars label:nth-of-type(8),
+.rating [type="radio"]:nth-of-type(9):focus ~ .stars label:nth-of-type(9),
+.rating [type="radio"]:nth-of-type(10):focus ~ .stars label:nth-of-type(10),
+.rating [type="radio"]:nth-of-type(11):focus ~ .stars label:nth-of-type(11) {
     color: darkorange;
 }
