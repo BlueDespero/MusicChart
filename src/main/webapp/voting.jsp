@@ -78,7 +78,7 @@
 %>
 <div>
     Thank you for voting!
-    Your score is <%=session.getAttribute("rating_given")%> start!
+    Your score is <%=session.getAttribute("rating_given")%> stars!
 </div>
 <%
     }

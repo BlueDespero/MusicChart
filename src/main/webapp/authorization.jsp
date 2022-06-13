@@ -12,9 +12,11 @@
     <label> Login:
         <input type="text" name="login">
     </label>
+    <br>
     <label> Password:
         <input type="password" name="password">
     </label>
+    <br>
     <input type="submit" value="Authorize">
 </form>
 

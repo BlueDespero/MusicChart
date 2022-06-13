@@ -14,9 +14,11 @@
     <label> Song name:
         <input type="text" name="song_name">
     </label>
+    <br>
     <label> Song url:
         <input type="url" name="song_url">
     </label>
+    <br>
     <input type="submit" value="Authorize">
 </form>
 
@@ -33,7 +35,7 @@
 <h3> Provided URL is invalid!</h3>
 <%
     }
-} else {
+} else if (Objects.equals(song_name, "") || Objects.equals(song_url, "")) {
 %>
 <h3>Please provide a name and an url of the song you want users to vote on!</h3>
 <%
