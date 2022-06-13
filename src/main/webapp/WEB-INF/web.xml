@@ -22,4 +22,13 @@
         <url-pattern>/addsong</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>voting</servlet-name>
+        <jsp-file>/voting.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>voting</servlet-name>
+        <url-pattern>/voting</url-pattern>
+    </servlet-mapping>
+
 </web-app>
